@@ -47,6 +47,7 @@ func authMiddleware(next http.HandlerFunc) http.HandlerFunc {
 
 func public(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("hello public!\n"))
+	fmt.Printf("public in!!!!!!!!!")
 }
 
 func private(w http.ResponseWriter, r *http.Request) {
@@ -58,13 +59,14 @@ func main() {
 	if port == "" {
 		log.Fatal("$PORT must be set")
 	}
+	fmt.Printf("test in !!!!!!!!!!!!")
 	// fmt.Printf("test in!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 	// allowedOrigins := handlers.AllowedOrigins([]string{"https://fierce-bastion-29133.herokuapp.com" + port})
 	// allowedMethods := handlers.AllowedMethods([]string{"GET", "POST", "DELETE", "PUT"})
 	// allowedHeaders := handlers.AllowedHeaders([]string{"Authorization"})
 
 	r := mux.NewRouter()
-	r.HandleFunc("/public", public)
+	r.HandleFunc("/public", public).Methods("GET")
 	r.HandleFunc("/private", authMiddleware(private))
 
 	// log.Fatal(http.ListenAndServe(":8000", handlers.CORS(allowedOrigins, allowedMethods, allowedHeaders)(r)))

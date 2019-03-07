@@ -9,6 +9,7 @@ import (
 	"strings"
 
 	firebase "firebase.google.com/go"
+	"github.com/gorilla/mux"
 	"google.golang.org/api/option"
 )
 
@@ -64,8 +65,8 @@ func main() {
 	// allowedMethods := handlers.AllowedMethods([]string{"GET", "POST", "DELETE", "PUT"})
 	// allowedHeaders := handlers.AllowedHeaders([]string{"Authorization"})
 
-	// r := mux.NewRouter()
-	// r.HandleFunc("/public", public).Methods("GET")
+	r := mux.NewRouter()
+	r.HandleFunc("/", public)
 	// r.HandleFunc("/private", authMiddleware(private))
 
 	// log.Fatal(http.ListenAndServe(":8000", handlers.CORS(allowedOrigins, allowedMethods, allowedHeaders)(r)))

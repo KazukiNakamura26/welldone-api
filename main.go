@@ -57,6 +57,7 @@ func private(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	port := os.Getenv("PORT")
+	fmt.Printf("port: " + port)
 	if port == "" {
 		log.Fatal("$PORT must be set")
 	}

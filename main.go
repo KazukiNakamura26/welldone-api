@@ -9,7 +9,6 @@ import (
 	"strings"
 
 	firebase "firebase.google.com/go"
-	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"google.golang.org/api/option"
 )
@@ -59,14 +58,14 @@ func main() {
 	if port == "" {
 		log.Fatal("$PORT must be set")
 	}
-	fmt.Printf("test in!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-	allowedOrigins := handlers.AllowedOrigins([]string{"https://fierce-bastion-29133.herokuapp.com" + port})
-	allowedMethods := handlers.AllowedMethods([]string{"GET", "POST", "DELETE", "PUT"})
-	allowedHeaders := handlers.AllowedHeaders([]string{"Authorization"})
+	// fmt.Printf("test in!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+	// allowedOrigins := handlers.AllowedOrigins([]string{"https://fierce-bastion-29133.herokuapp.com" + port})
+	// allowedMethods := handlers.AllowedMethods([]string{"GET", "POST", "DELETE", "PUT"})
+	// allowedHeaders := handlers.AllowedHeaders([]string{"Authorization"})
 
 	r := mux.NewRouter()
 	r.HandleFunc("/public", public)
 	r.HandleFunc("/private", authMiddleware(private))
 
-	log.Fatal(http.ListenAndServe(":8000", handlers.CORS(allowedOrigins, allowedMethods, allowedHeaders)(r)))
+	// log.Fatal(http.ListenAndServe(":8000", handlers.CORS(allowedOrigins, allowedMethods, allowedHeaders)(r)))
 }

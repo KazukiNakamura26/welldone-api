@@ -61,7 +61,7 @@ func main() {
 		log.Fatal("$PORT must be set")
 	}
 
-	allowedOrigins := handlers.AllowedOrigins([]string{"https://fierce-bastion-29133.herokuapp.com" + port})
+	allowedOrigins := handlers.AllowedOrigins([]string{"http://10.0.75.1:8080/"})
 	allowedMethods := handlers.AllowedMethods([]string{"GET", "POST", "DELETE", "PUT"})
 	allowedHeaders := handlers.AllowedHeaders([]string{"Authorization"})
 

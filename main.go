@@ -17,7 +17,7 @@ import (
 func authMiddleware(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		// Firebase SDK のセットアップ
-		opt := option.WithCredentialsFile(os.Getenv("CREDENTIALS"))
+		opt := option.WithCredentialsFile("config/welldone-21fc5-firebase-adminsdk-xs05i-63adcdbd60.json")
 		app, err := firebase.NewApp(context.Background(), nil, opt)
 		if err != nil {
 			fmt.Printf("error: %v\n", err)
@@ -62,7 +62,7 @@ func main() {
 		log.Fatal("$PORT must be set")
 	}
 
-	allowedOrigins := handlers.AllowedOrigins([]string{"https://welldone-app.herokuapp.com"})
+	allowedOrigins := handlers.AllowedOrigins([]string{"http://localhost:8080"})
 	allowedMethods := handlers.AllowedMethods([]string{"GET", "POST", "DELETE", "PUT"})
 	allowedHeaders := handlers.AllowedHeaders([]string{"Authorization"})
 

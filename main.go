@@ -56,12 +56,6 @@ func private(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	port := os.Getenv("PORT")
-	fmt.Printf("port: " + port)
-	if port == "" {
-		log.Fatal("$PORT must be set")
-	}
-
 	allowedOrigins := handlers.AllowedOrigins([]string{"http://localhost:8080"})
 	allowedMethods := handlers.AllowedMethods([]string{"GET", "POST", "DELETE", "PUT"})
 	allowedHeaders := handlers.AllowedHeaders([]string{"Authorization"})
@@ -70,5 +64,5 @@ func main() {
 	r.HandleFunc("/", public)
 	r.HandleFunc("/private", authMiddleware(private))
 
-	log.Fatal(http.ListenAndServe(":"+port, handlers.CORS(allowedOrigins, allowedMethods, allowedHeaders)(r)))
+	log.Fatal(http.ListenAndServe(":8000", handlers.CORS(allowedOrigins, allowedMethods, allowedHeaders)(r)))
 }

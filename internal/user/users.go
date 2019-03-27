@@ -1,4 +1,4 @@
-package userinfo
+package users
 
 import (
 	"context"

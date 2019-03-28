@@ -1,1 +1,1 @@
-web: welldone-api/cmd
+web: PORT=$PORT welldone-api

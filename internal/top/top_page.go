@@ -1,13 +1,18 @@
 package top
 
 import (
+	"encoding/json"
 	"fmt"
 	"net/http"
 	"os"
 
-	authfirebase "../../pkg/auth"
-	userInfo "../user"
+	userInfo "github.com/KazukiNakamura26/welldone-api/internal/user"
+	authfirebase "github.com/KazukiNakamura26/welldone-api/pkg/auth"
 )
+
+type topPageRespons struct {
+	UserName string `json:"username"`
+}
 
 func TopPage(w http.ResponseWriter, r *http.Request) {
 
@@ -27,6 +32,19 @@ func TopPage(w http.ResponseWriter, r *http.Request) {
 		fmt.Printf("firebase set up error!: %v\n", err)
 		os.Exit(1)
 	}
+	var res topPageRespons
+	res.UserName = userInfo.UserName
 
-	w.Write([]byte(userInfo.UserName))
+	topPageResponsHandler(w, r, res)
+}
+
+func topPageResponsHandler(w http.ResponseWriter, r *http.Request, topRespons topPageRespons) {
+	res, err := json.Marshal(topRespons)
+
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(res)
 }

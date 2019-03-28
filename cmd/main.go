@@ -5,8 +5,8 @@ import (
 	"log"
 	"net/http"
 
-	top "../internal/top"
-	authfirebase "../pkg/auth"
+	top "github.com/KazukiNakamura26/welldone-api/internal/top"
+	authfirebase "github.com/KazukiNakamura26/welldone-api/pkg/auth"
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 )

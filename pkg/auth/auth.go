@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	initfirebase "../init"
+	initfirebase "github.com/KazukiNakamura26/welldone-api/pkg/init"
 	"firebase.google.com/go/auth"
 )
 

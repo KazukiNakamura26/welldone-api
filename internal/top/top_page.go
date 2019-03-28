@@ -11,7 +11,7 @@ import (
 )
 
 type topPageRespons struct {
-	UserName string `json:"username"`
+	UserName string `json:"name"`
 }
 
 func TopPage(w http.ResponseWriter, r *http.Request) {

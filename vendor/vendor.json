@@ -29,8 +29,8 @@
 		{
 			"checksumSHA1": "952Pr/IuT/6eFcBx2X01zJw74bE=",
 			"path": "cloud.google.com/go/firestore",
-			"revision": "35dc35bf899d0a0359ed6a9d8bdcd22c031ee199",
-			"revisionTime": "2019-03-06T20:47:00Z"
+			"revision": "4b031de94b32c3a6b8cf7d64fd2b377ac5859eef",
+			"revisionTime": "2019-03-26T12:33:24Z"
 		},
 		{
 			"checksumSHA1": "mHSV54bz+YYVxDOH+HsL/1JKcfk=",

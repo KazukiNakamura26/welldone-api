@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	initFireBase "../../pkg/init"
+	initFireBase "github.com/KazukiNakamura26/welldone-api/pkg/init"
 )
 
 type UserInfoDate struct {

@@ -1,1 +1,1 @@
-web: welldone-api
+web: bin/welldone-api/cmd

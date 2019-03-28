@@ -783,9 +783,5 @@
 			"revisionTime": "2019-03-06T18:59:01Z"
 		}
 	],
-	"rootPath": "github.com/KazukiNakamura26/welldone-api",
-	"heroku" : {
-		"install" : ["./..."],
-		"goVersion" : "go1.12"
-	}
+	"rootPath": "github.com/KazukiNakamura26/welldone-api"
 }

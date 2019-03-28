@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 
 	top "../internal/top"
 	authfirebase "../pkg/auth"
@@ -17,10 +18,9 @@ func public(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	port := "3030"
-	fmt.Printf("port: " + port)
+	port := os.Getenv("PORT")
 	if port == "" {
-		log.Fatal("$PORT must be set")
+		port = "3000"
 	}
 
 	allowedOrigins := handlers.AllowedOrigins([]string{"http://localhost:8080"})

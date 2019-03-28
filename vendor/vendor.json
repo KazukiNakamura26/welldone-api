@@ -1,5 +1,11 @@
 {
 	"comment": "",
+	"heroku": {
+		"goVersion": "go1.12",
+		"install": [
+			"./..."
+		]
+	},
 	"ignore": "test",
 	"package": [
 		{
@@ -443,8 +449,8 @@
 		{
 			"checksumSHA1": "2AyxThTPscWdy49fGsU2tg0Uyw8=",
 			"path": "google.golang.org/api/option",
-			"revision": "1949198e2e5ae38675b60302e6e08c5cf74493fb",
-			"revisionTime": "2019-02-27T22:14:17Z"
+			"revision": "af986cd59464c8245c96ea197dd3de71d5930b8e",
+			"revisionTime": "2019-03-27T00:07:50Z"
 		},
 		{
 			"checksumSHA1": "wBYcPrL0XQqZhu/xQZLdJEstMWU=",
@@ -778,7 +784,7 @@
 		}
 	],
 	"rootPath": "github.com/KazukiNakamura26/welldone-api",
-	"heroku": {
+	"heroku" : {
 		"install" : ["./..."],
 		"goVersion" : "go1.12"
 	}

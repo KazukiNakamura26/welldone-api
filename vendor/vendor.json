@@ -779,7 +779,7 @@
 	],
 	"rootPath": "github.com/KazukiNakamura26/welldone-api",
 	"heroku": {
-		"install" : ["."],
+		"install" : ["./cmd"],
 		"goVersion" : "go1.12"
 	}
 }

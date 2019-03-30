@@ -1,5 +1,11 @@
 {
 	"comment": "",
+	"heroku": {
+		"goVersion": "go1.12",
+		"install": [
+			"./..."
+		]
+	},
 	"ignore": "test",
 	"package": [
 		{
@@ -23,8 +29,8 @@
 		{
 			"checksumSHA1": "952Pr/IuT/6eFcBx2X01zJw74bE=",
 			"path": "cloud.google.com/go/firestore",
-			"revision": "35dc35bf899d0a0359ed6a9d8bdcd22c031ee199",
-			"revisionTime": "2019-03-06T20:47:00Z"
+			"revision": "4b031de94b32c3a6b8cf7d64fd2b377ac5859eef",
+			"revisionTime": "2019-03-26T12:33:24Z"
 		},
 		{
 			"checksumSHA1": "mHSV54bz+YYVxDOH+HsL/1JKcfk=",
@@ -443,8 +449,8 @@
 		{
 			"checksumSHA1": "2AyxThTPscWdy49fGsU2tg0Uyw8=",
 			"path": "google.golang.org/api/option",
-			"revision": "1949198e2e5ae38675b60302e6e08c5cf74493fb",
-			"revisionTime": "2019-02-27T22:14:17Z"
+			"revision": "af986cd59464c8245c96ea197dd3de71d5930b8e",
+			"revisionTime": "2019-03-27T00:07:50Z"
 		},
 		{
 			"checksumSHA1": "wBYcPrL0XQqZhu/xQZLdJEstMWU=",
@@ -777,9 +783,5 @@
 			"revisionTime": "2019-03-06T18:59:01Z"
 		}
 	],
-	"rootPath": "github.com/KazukiNakamura26/welldone-api",
-	"heroku": {
-		"install" : ["."],
-		"goVersion" : "go1.12"
-	}
+	"rootPath": "github.com/KazukiNakamura26/welldone-api"
 }
